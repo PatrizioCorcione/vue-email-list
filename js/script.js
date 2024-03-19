@@ -16,11 +16,21 @@ createApp({
         axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
           .then((risposta) => {
             this.arrayEmail.push(risposta.data.response)
-            counterShow++
+            this.counterShow++
           })
       }
         // .catch(errore => {
         // })
+    },
+
+    showInTime(){
+
+      if (this.counterShow == 10) {
+        return this.arrayEmail
+        
+      }
+
+
     }
 
     
