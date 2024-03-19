@@ -5,7 +5,6 @@ createApp({
     return {
       title: 'Axios',
       arrayEmail:[],
-      counterShow: 0,
     }
   },
   methods: {
@@ -16,7 +15,6 @@ createApp({
         axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
           .then((risposta) => {
             this.arrayEmail.push(risposta.data.response)
-            this.counterShow++
           })
       }
         // .catch(errore => {
@@ -25,7 +23,7 @@ createApp({
 
     showInTime(){
 
-      if (this.counterShow == 10) {
+      if (this.arrayEmail.length == 10) {
         return this.arrayEmail
         
       }
